@@ -5,16 +5,11 @@ import shrimplies from '../images/my-shrimplies.png'
 
 const Header = ({user }) => {
 
-
-
     const [favsActive, setFavsActive] = useState(false)
 
     const handleFavouritesClick = () => {
         setFavsActive(!favsActive)
     }
-
-        
-
 
     return (
     <header>
@@ -25,8 +20,6 @@ const Header = ({user }) => {
             
             <img src={shrimplies} className='shrimp' onClick={handleFavouritesClick}/>
 
-        
-        
             {favsActive && <Favourites user={user}/>}
             </div>
             {/* <div className='hero'>

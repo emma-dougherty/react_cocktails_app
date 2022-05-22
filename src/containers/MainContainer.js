@@ -54,8 +54,6 @@ const MainContainer = () => {
     const oldfashList = cocktails.filter(drink => drink.strGlass === 'Old-fashioned glass')
     const highballList = cocktails.filter(drink => drink.strGlass === 'Highball glass')
 
-
-
     const getCocktails = () => {
         fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail")
         .then(res => res.json())
@@ -66,14 +64,10 @@ const MainContainer = () => {
 
     return (
         <>
-    
-    
         <UserContext.Provider value={{user, setUser}} >
         <div className='header'>
             <Header user={user} />
         </div>
-
-        
 
             <Bubbles/> 
         

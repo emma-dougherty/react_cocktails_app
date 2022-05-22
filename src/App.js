@@ -7,7 +7,7 @@ function App() {
     <div className="parallax">
 
       <div className="layer clouds"></div>
-      <div className="layer acme"></div>
+      <div className="layer sun"></div>
       <div className="layer wavethree"></div>
       <div className="layer wavetwo"></div>
 

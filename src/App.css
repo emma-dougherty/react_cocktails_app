@@ -46,7 +46,7 @@ body {
   fill: #37abff;
 }
 
-.acme {
+.sun {
   transform: translateZ(-10px) scale(8);
   background-image: url('./images/sun.svg');
   width: 50vw;
@@ -54,7 +54,7 @@ body {
   /* margin-top: 105vh; */
 }
 
-.acme:hover {
+.sun:hover {
   filter: drop-shadow(5px 5px 50px rgb(255, 233, 90));
   }
 
