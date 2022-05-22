@@ -16,11 +16,12 @@ const Favourites = () => {
         return (
         <li>
             <hr />
-            <span>
+            <p>
             {cocktail.strDrink} 
-            </span>
-            <br/>
-                <button onClick={() => handleItemDelete(cocktail)}>  Remove  </button>
+            </p>
+                {/* <button onClick={() => handleItemDelete(cocktail)}>  Remove  </button> */}
+
+                <i class="fa fa-remove" onClick={() => handleItemDelete(cocktail)}/>
         </li>
         )
     })

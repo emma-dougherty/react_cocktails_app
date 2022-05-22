@@ -1,5 +1,6 @@
 import React, {useContext} from 'react'
 import UserContext from '../context/UserContext';
+import shrimplies from '../images/shrimplies.png'
 
 const Cocktail = ({cocktail}) => {
     
@@ -25,9 +26,9 @@ const Cocktail = ({cocktail}) => {
 
     return (
         <div className="cocktail">
-            <p>{cocktail.strDrink}</p>
-            {/* <img src={cocktail.strDrinkThumb}/> */}
-            <button onClick={handleAddToFavourites}>This is shrimply the best</button>
+            <p onClick={handleAddToFavourites}>{cocktail.strDrink} </p>
+            {/* <img src={shrimplies} className='shrimp-fav' onClick={handleAddToFavourites}/> */}
+            {/* <button onClick={}>This is shrimply the best</button> */}
         </div>
     )
 }

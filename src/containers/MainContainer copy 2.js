@@ -2,28 +2,26 @@ import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import UserContext from '../context/UserContext'
 import CocktailsContainer from './CocktailsContainer'
+import CocktailList from '../components/CocktailList'
 import Bubbles from '../components/Bubbles'
 import hero from '../images/hero.png'
 
-
 const MainContainer = () => {
-
 
     const [cocktails, setCocktails] = useState ([])
     const [selectedList, setSelectedList] = useState([])
     const [user, setUser] = useState ({
-        name: 'Mol Lusk',
+        name: 'Molly Lusk',
         favourites: []
     })
-
 
     useEffect(() => {
         getCocktails()
         },[])
 
-    const handleSelectChange = () => {
-        setSelectedList(selectedList)
-    }
+    const handleSelectChange = (selectedItem) => {
+        setSelectedList(selectedItem)
+        }
 
     const margaritaList = cocktails.filter(drink => drink.strGlass === 'Margarita glass')   
     const cocktailGlList = cocktails.filter(drink => drink.strGlass === 'Cocktail glass')
@@ -47,21 +45,19 @@ const MainContainer = () => {
     return (
         <>
         <UserContext.Provider value={{user, setUser}} >
-        <div className='header'>
-            <Header user={user} />
-        </div>
+            <div className='header'>
+                <Header user={user} />
+            </div>
 
-            <Bubbles/> 
+                <Bubbles/> 
+            
+            <div className='hero'>
+                <img src={hero} className='logo'/>
+            </div>
+                {selectedList ? <CocktailList selectedList={selectedList} /> : null}
+                <CocktailsContainer cocktails={cocktails} listsArray={listsArray} selectedList={selectedList} handleSelectChange={handleSelectChange}/>   
         
-        <div className='hero'>
-            <img src={hero} className='logo'/>
-        </div>
-
-        
-            <CocktailsContainer cocktails={cocktails} listsArray={listsArray} selectedList={selectedList} handleSelectChange={handleSelectChange}/>  
-        
-        </UserContext.Provider>
-        
+        </UserContext.Provider> 
         </>
     )
 }
